@@ -32,7 +32,7 @@ export function* signIn({ payload }) {
   } catch (err) {
     Alert.alert(
       'Falha na autenticação',
-      'Houve um erro no logi, verifique seus dados'
+      'Houve um erro no login, verifique seus dados'
     );
     yield put(signFailure());
   }
@@ -46,12 +46,15 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      provider: true,
     });
-
     // history.push('/');
   } catch (err) {
-    console.log('falha no cadastro');
+    Alert.alert(
+      'Falha no cadastro',
+      'Houve um erro no cadastro, verifique seus dados'
+    );
+
+    yield put(signFailure());
   }
 }
 
