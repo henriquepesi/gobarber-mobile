@@ -21,6 +21,9 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'editor.formatOnSave': true,
+    'eslint.autoFixOnSave': true,
+    'eslint.alwaysShowStatus': true,
   },
   settings: {
     'import/resolver': {
