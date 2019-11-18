@@ -10,12 +10,10 @@ export function* updateProfile({ payload }) {
     const { name, email, ...rest } = payload.data;
 
     // Object assign une dois objetos
-    const profile = {
-      name,
-      email,
-      avatar_id,
-      ...(rest.oldPassword ? rest : {}),
-    };
+    const profile = Object.assign(
+      { name, email },
+      rest.oldPassword ? rest : {}
+    );
 
     const response = yield call(api.put, 'users', profile);
 
