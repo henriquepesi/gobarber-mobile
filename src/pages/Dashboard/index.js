@@ -14,9 +14,9 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function loadAppointments() {
-      const responde = await api.get('appointments');
+      const response = await api.get('appointments');
 
-      setAppointments(responde.data);
+      setAppointments(response.data);
     }
     loadAppointments();
   }, []);
